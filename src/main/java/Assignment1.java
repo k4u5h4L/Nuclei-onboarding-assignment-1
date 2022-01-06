@@ -4,14 +4,15 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Assignment1 {
+
   public static void main(String[] args) {
     // check if -name and -type are present by checking the number of arguements
     // and names
-    if (args.length < 4 || !Arrays.asList(args).contains("-name") ||  !Arrays.asList(args).contains("-type")) {
+    if (args.length < 4 || !Arrays.asList(args).contains("-name") || !Arrays.asList(args)
+        .contains("-type")) {
       System.out.println("-name and -type not present. Exiting...");
       System.exit(1);
-    } else
-    if (!args[0].equals("-name")) {
+    } else if (!args[0].equals("-name")) {
       System.out.println("-name should be present first. Exiting...");
       System.exit(1);
     }
@@ -45,18 +46,16 @@ public class Assignment1 {
       item.put("-quantity", "0");
     }
 
-    if (!(item.get("-type").equals("raw") || item.get("-type").equals("manufactured") || item.get("-type").equals("imported"))) {
-      System.out.println("-type should have only 3 types of values: raw, manufactured and "
-          + "imported");
+    if (!(item.get("-type").equals("raw") || item.get("-type").equals("manufactured") || item.get(
+        "-type").equals("imported"))) {
+      System.out.println(
+          "-type should have only 3 types of values: raw, manufactured and " + "imported");
       System.exit(1);
     }
 
     // finally push all the values into the arraylist
-    items.add(new Item(
-        item.get("-name"),
-        Integer.parseInt(item.get("-price")),
-        Integer.parseInt(item.get("-quantity")),
-        item.get("-type")));
+    items.add(new Item(item.get("-name"), Integer.parseInt(item.get("-price")),
+        Integer.parseInt(item.get("-quantity")), item.get("-type")));
 
     // keep iterating until user says no
     while (true) {
@@ -95,6 +94,7 @@ public class Assignment1 {
 }
 
 class Item {
+
   private String name;
   private int price;
   private int quantity;
@@ -112,6 +112,7 @@ class Item {
   public String getName() {
     return this.name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
@@ -119,6 +120,7 @@ class Item {
   public int getPrice() {
     return this.price;
   }
+
   public void setPrice(int price) {
     this.price = price;
   }
@@ -126,6 +128,7 @@ class Item {
   public int getQuantity() {
     return this.quantity;
   }
+
   public void setQuantity(int quantity) {
     this.quantity = quantity;
   }
@@ -133,6 +136,7 @@ class Item {
   public String getType() {
     return this.type;
   }
+
   public void setType(String type) {
     this.type = type;
   }
