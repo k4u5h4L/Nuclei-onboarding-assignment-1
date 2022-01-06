@@ -1,5 +1,6 @@
 package assignment1;
 
+import assignment1.constants.Constants;
 import assignment1.exceptions.InvalidArguementsException;
 import assignment1.exceptions.StopLoopException;
 import assignment1.models.Item;
@@ -50,7 +51,7 @@ public class Application {
       }
     }
 
-    System.out.println("\n\nYour items are:\n");
+    System.out.println(Constants.DOUBLE_NEW_LINE + "Your items are:\n");
 
     for (ItemWithTax it : items) {
       it.display();

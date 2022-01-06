@@ -1,5 +1,7 @@
 package assignment1.models;
 
+import assignment1.constants.Constants;
+
 public class ItemWithTax extends Item {
 
   public ItemWithTax(final String name, final int price, final int quantity, final String type) {
@@ -12,7 +14,7 @@ public class ItemWithTax extends Item {
     System.out.println("Item quantity: " + this.getQuantity());
     System.out.println("Item type: " + this.getType().toString().toLowerCase());
     System.out.println("Item sales tax: " + this.getSalesTax());
-    System.out.println("Item final price: " + this.getFinalPrice() + "\n\n");
+    System.out.println("Item final price: " + this.getFinalPrice() + Constants.DOUBLE_NEW_LINE);
   }
 
   public double getSalesTax() {

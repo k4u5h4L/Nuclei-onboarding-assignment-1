@@ -1,5 +1,6 @@
 package assignment1.services;
 
+import assignment1.constants.Constants;
 import assignment1.exceptions.InvalidArguementsException;
 import java.util.HashMap;
 
@@ -20,16 +21,16 @@ public class CommandLineArguementsParser {
     // check if type is present as it is mandatory
     if (!item.containsKey("-type")) {
       // send not there message and quit
-      throw new InvalidArguementsException("-name should be present first.");
+      throw new InvalidArguementsException(Constants.NAME_NOT_FIRST_EXCEPTION);
     }
     // if price is not present, assign a default value
     if (!item.containsKey("-price")) {
-      System.out.println("-price wasn't provided, using 0 as default value...");
+      System.out.println("-price" + Constants.VALUE_NOT_PROVIDED_MESSAGE);
       item.put("-price", "0");
     }
     // if quantity is not present, assign a default value
     if (!item.containsKey("-quantity")) {
-      System.out.println("-quantity wasn't provided, using 0 as default value...");
+      System.out.println("-quantity" + Constants.VALUE_NOT_PROVIDED_MESSAGE);
       item.put("-quantity", "0");
     }
 
