@@ -5,7 +5,7 @@ plugins {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'Assignment1'
+        attributes 'Main-Class': 'assignment1.Main'
     }
 }
 
