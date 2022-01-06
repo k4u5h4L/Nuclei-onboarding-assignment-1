@@ -59,8 +59,10 @@ public class Item {
   private void calculateSalesTax() {
     if (type.equals("raw")) {
       salesTax = 0.125 * price;
+      finalPrice = price + salesTax;
     } else if (type.equals("manufactured")) {
       salesTax = (0.125 * price) + (0.02 * (price + (0.125 * price)));
+      finalPrice = price + salesTax;
     } else {
       double surcharge;
       double importDuty = (0.1 * price) + price;

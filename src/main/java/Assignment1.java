@@ -19,13 +19,10 @@ class StopLoopException extends Exception {
 
 public class Assignment1 {
 
-  String itemName, itemType;
-  int itemPrice, itemQuantity;
-
   /*
    * Function to validate if the command line arguements passed are in the correct form
    * */
-  private static void validateInputs(String[] params) throws InvalidArguementsException {
+  public static void validateInputs(String[] params) throws InvalidArguementsException {
     // check if -name and -type are present by checking the number of arguements
     // and names
     if (params.length < 4 || !Arrays.asList(params).contains("-name") || !Arrays.asList(params)
@@ -41,7 +38,7 @@ public class Assignment1 {
   /*
    * Function to parse all the command line arguements and return a hashmap
    */
-  private static HashMap<String, String> getArguements(String[] args)
+  public static HashMap<String, String> getArguements(String[] args)
       throws InvalidArguementsException {
     HashMap<String, String> item = new HashMap<String, String>();
 
@@ -69,7 +66,10 @@ public class Assignment1 {
     return item;
   }
 
-  private static void validateTypeInput(HashMap<String, String> item)
+  /*
+   * Function to check if 'type' has only one of the 3 values or not
+   */
+  public static void validateTypeInput(HashMap<String, String> item)
       throws InvalidArguementsException {
     if (!(item.get("-type").equals("raw") || item.get("-type").equals("manufactured") || item.get(
         "-type").equals("imported"))) {
@@ -92,7 +92,7 @@ public class Assignment1 {
     }
   }
 
-  private static Item scanner(Scanner scan) throws StopLoopException {
+  public static Item scanner(Scanner scan) throws StopLoopException {
     System.out.print("Do you want to enter details of any other item (y/n): ");
     char choice = scan.next().charAt(0);
 
