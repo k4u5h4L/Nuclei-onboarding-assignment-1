@@ -1,1 +1,1 @@
-# Nuclei onboaridng assignment 1
+# Nuclei onboarding assignment 1
