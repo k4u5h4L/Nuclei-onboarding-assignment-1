@@ -1,39 +1,35 @@
 package assignment1.models;
 
-import assignment1.exceptions.InvalidArguementsException;
+
+import assignment1.Application;
 import assignment1.models.enums.ItemType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Item {
 
   protected String name;
-  protected int price;
+  protected double price;
   protected int quantity;
-  protected ItemType type;
   protected double salesTax;
+  protected ItemType type;
   protected double finalPrice;
 
-  Item(String name, int price, int quantity, String type) {
+  final static Logger logger = LoggerFactory.getLogger(Item.class);
+
+  Item(String name, double price, int quantity) {
     this.name = name;
     this.price = price;
     this.quantity = quantity;
-    try {
-      validateTypeInput(type);
-      this.type = ItemType.valueOf(type.toUpperCase());
-    } catch (InvalidArguementsException e) {
-      System.out.println("-type should have 'raw', 'manufactured' or 'imported'. Exiting...");
-      System.exit(1);
-    }
   }
 
-  /*
-   * Function to check if 'type' has only one of the 3 values or not
-   */
-  public static void validateTypeInput(String type) throws InvalidArguementsException {
-    if ((!(type.equalsIgnoreCase("raw") || type.equalsIgnoreCase("manufactured")
-        || type.equalsIgnoreCase("imported")))) {
-      throw new InvalidArguementsException(
-          "-type should have only 3 types of values: raw, manufactured and imported");
-    }
+  public ItemType getType() {
+    return type;
+  }
+
+  public void setType(final ItemType type) {
+    this.type = type;
   }
 
   public String getName() {
@@ -44,7 +40,7 @@ public class Item {
     this.name = name;
   }
 
-  public int getPrice() {
+  public double getPrice() {
     return this.price;
   }
 
@@ -60,12 +56,19 @@ public class Item {
     this.quantity = quantity;
   }
 
-  public ItemType getType() {
-    return this.type;
+  public double getSalesTax() {
+    return salesTax;
   }
 
-  public void setType(String type) {
-    this.type = ItemType.valueOf(type.toUpperCase());
+  public void setSalesTax(final double salesTax) {
+    this.salesTax = salesTax;
   }
 
+  public double getFinalPrice() {
+    return finalPrice;
+  }
+
+  public void setFinalPrice(final double finalPrice) {
+    this.finalPrice = finalPrice;
+  }
 }

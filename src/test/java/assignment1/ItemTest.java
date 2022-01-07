@@ -1,7 +1,8 @@
 package assignment1;
 
-import assignment1.models.Item;
-import assignment1.models.ItemWithTax;
+import assignment1.models.ImportedItem;
+import assignment1.models.ManufacturedItem;
+import assignment1.models.RawItem;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -12,7 +13,7 @@ public class ItemTest {
   @Test
   @DisplayName("Imported items calculate the right final prices")
   public void verifySalestaxCalculationImpoted() {
-    ItemWithTax item = new ItemWithTax("cheese", 200, 5, "imported");
+    ImportedItem item = new ImportedItem("cheese", 200, 5, "imported");
 
     Assertions.assertEquals(231, item.getFinalPrice());
   }
@@ -20,7 +21,7 @@ public class ItemTest {
   @Test
   @DisplayName("Raw items calculate the right final prices")
   public void verifySalestaxCalculationRaw() {
-    ItemWithTax item = new ItemWithTax("cheese", 200, 5, "raw");
+    RawItem item = new RawItem("cheese", 200, 5, "raw");
 
     Assertions.assertEquals(225, item.getFinalPrice());
   }
@@ -28,7 +29,7 @@ public class ItemTest {
   @Test
   @DisplayName("Manufactured items calculate the right final prices")
   public void verifySalestaxCalculationManufactured() {
-    ItemWithTax item = new ItemWithTax("cheese", 200, 5, "manufactured");
+    ManufacturedItem item = new ManufacturedItem("cheese", 200, 5, "manufactured");
 
     Assertions.assertEquals(229.5, item.getFinalPrice());
   }

@@ -26,7 +26,7 @@ public class CommandLineArguementsParser {
     // if price is not present, assign a default value
     if (!item.containsKey("-price")) {
       System.out.println("-price" + Constants.VALUE_NOT_PROVIDED_MESSAGE);
-      item.put("-price", "0");
+      item.put("-price", "0.0");
     }
     // if quantity is not present, assign a default value
     if (!item.containsKey("-quantity")) {

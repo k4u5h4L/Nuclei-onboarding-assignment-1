@@ -5,12 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="356e75d9-cc75-4748-ac71-3a0416bf5c55" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Assignment1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/ItemWithTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/ItemWithTax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/ItemWithTax.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/ValidateArguements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/ValidateArguements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/ValidateArguements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateArguements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +81,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunAnythingCache">
@@ -75,7 +92,7 @@
       <command value="gradle assemble" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.Tests in 'assignment1'">
     <configuration type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -95,10 +112,10 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true" show_console_on_std_err="true">
       <option name="MAIN_CLASS_NAME" value="assignment1.Main" />
       <module name="Assignment1.main" />
-      <option name="PROGRAM_PARAMETERS" value="-name cheese -price 200 -quantity 3 -type imported" />
+      <option name="PROGRAM_PARAMETERS" value="-name cheese -price 200 -quantity 5 -type imported" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="assignment1.*" />
@@ -109,7 +126,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Assignment1 [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Assignment1 [assemble]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -199,19 +216,43 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Tests in 'assignment1'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;assignment1.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.Assignment1 [assemble]" />
       <item itemvalue="Gradle.Assignment1Test.verifyNoExceptionThrown" />
       <item itemvalue="Gradle.Assignment1Test.verifySalestaxCalculation (1)" />
       <item itemvalue="Gradle.Assignment1Test (1)" />
+      <item itemvalue="Gradle.Tests in 'assignment1'" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'assignment1'" />
         <item itemvalue="Gradle.Assignment1Test (1)" />
         <item itemvalue="Gradle.Assignment1Test.verifySalestaxCalculation (1)" />
         <item itemvalue="Gradle.Assignment1Test.verifyNoExceptionThrown" />
-        <item itemvalue="Gradle.Assignment1 [assemble]" />
       </list>
     </recent_temporary>
   </component>
@@ -238,6 +279,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Assignment1$Tests_in__assignment1_.ic" NAME="Tests in 'assignment1' Coverage Results" MODIFIED="1641541604097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Assignment1$Assignment1Test__1_.ic" NAME="Assignment1Test (1) Coverage Results" MODIFIED="1641442796116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

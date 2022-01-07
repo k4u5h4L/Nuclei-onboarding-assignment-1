@@ -1,4 +1,4 @@
-package assignment1.services;
+package assignment1.utils;
 
 import assignment1.constants.Constants;
 import assignment1.exceptions.InvalidArguementsException;

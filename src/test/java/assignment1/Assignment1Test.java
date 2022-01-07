@@ -2,7 +2,7 @@ package assignment1;
 
 import assignment1.exceptions.InvalidArguementsException;
 import assignment1.services.CommandLineArguementsParser;
-import assignment1.services.ValidateArguements;
+import assignment1.utils.ValidateArguements;
 import java.util.HashMap;
 
 import org.junit.jupiter.api.Assertions;
