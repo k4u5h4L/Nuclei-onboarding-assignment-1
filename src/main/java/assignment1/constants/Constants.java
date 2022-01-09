@@ -10,4 +10,5 @@ public class Constants {
   public static String NAME_AND_TYPE_NOT_PRESENT = "-name and -type not present.";
   public static String USER_INTERRUPTED = "User interrupted.";
   public static String VALUE_NOT_PROVIDED_MESSAGE = " wasn't provided, using 0 as default value...";
+  public static String PRICE_OR_VALUE_INVALID = " was not passed an Int or Double value";
 }

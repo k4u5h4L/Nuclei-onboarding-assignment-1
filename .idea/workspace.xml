@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="356e75d9-cc75-4748-ac71-3a0416bf5c55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Assignment1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/ItemWithTax.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/ValidateArguements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateArguements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateArguements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateArguements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
