@@ -48,6 +48,11 @@ public class Assignment1Test {
 
       ValidateArguements.validatePriceAndQuantity(map);
     });
+
+    Assertions.assertDoesNotThrow(() -> {
+      CommandLineArguementsParser.getArguements(
+          new String[]{"-name", "cheese", "-price", "100.00", "-type", "raw", "-quantity", "5"});
+    });
   }
 
   @Test
@@ -55,12 +60,14 @@ public class Assignment1Test {
   public void verifyHashMapFormation() {
     HashMap<String, String> map = new HashMap<String, String>();
     map.put("-name", "cheese");
-    map.put("-price", "200");
+    map.put("-price", "200.00");
     map.put("-type", "raw");
     map.put("-quantity", "5");
     try {
       Assertions.assertEquals(CommandLineArguementsParser.getArguements(
-          new String[]{"-name", "cheese", "-price", "200", "-type", "raw", "-quantity", "5"}), map);
+              new String[]{"-name", "cheese", "-price", "200.00", "-type", "raw", "-quantity", "5"
+              }),
+          map);
     } catch (InvalidArguementsException e) {
       Assertions.fail("Should have not thrown an exception");
     }

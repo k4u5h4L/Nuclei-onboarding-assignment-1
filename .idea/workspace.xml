@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="356e75d9-cc75-4748-ac71-3a0416bf5c55" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateArguements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateArguements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/ImportedItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Imported.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/ManufacturedItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Manufactured.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/RawItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Raw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/enums/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/enums/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/utils/AddToArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/AddToArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

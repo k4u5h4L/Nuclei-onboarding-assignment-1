@@ -6,8 +6,12 @@ import java.util.HashMap;
 
 public class CommandLineArguementsParser {
 
-  /*
-   * Function to parse all the command line arguements and return a hashmap
+  /**
+   * Function to parse the command line arguements into a hash map
+   *
+   * @param args array of strings
+   * @return hashmap with parsed arguements
+   * @throws InvalidArguementsException
    */
   public static HashMap<String, String> getArguements(String[] args)
       throws InvalidArguementsException {

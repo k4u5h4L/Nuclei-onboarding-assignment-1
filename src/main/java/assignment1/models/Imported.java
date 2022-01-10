@@ -4,19 +4,16 @@ import assignment1.exceptions.InvalidArguementsException;
 import assignment1.models.enums.ItemType;
 import assignment1.utils.ValidateType;
 
-public class ImportedItem extends Item {
+public class Imported extends Item {
 
-  public ImportedItem(final String name, final double price, final int quantity,
-                      final String type) {
+  public Imported(final String name, final double price, final int quantity) {
     super(name, price, quantity);
-    try {
-      ValidateType.validateTypeInput(type);
-      this.type = ItemType.valueOf(type.toUpperCase());
-    } catch (InvalidArguementsException e) {
-      logger.error("-type should have 'raw', 'manufactured' or 'imported'.", e);
-    }
+    this.type = ItemType.IMPORTED;
   }
 
+  /**
+   * Function to calculate sales tax
+   */
   private void calculateSalesTax() {
     double surcharge;
     double importDuty = (0.1 * price) + price;
@@ -33,12 +30,18 @@ public class ImportedItem extends Item {
     salesTax = finalPrice - price;
   }
 
+  /**
+   * @return sales tax after calculation
+   */
   @Override
   public double getSalesTax() {
     calculateSalesTax();
     return this.salesTax;
   }
 
+  /**
+   * @return final price after calculation
+   */
   @Override
   public double getFinalPrice() {
     calculateSalesTax();

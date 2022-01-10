@@ -23,6 +23,11 @@ public class Application {
 
   final static Logger logger = LoggerFactory.getLogger(Application.class);
 
+  /**
+   * Main application starting point
+   *
+   * @param args array of command line arguements
+   */
   public static void init(String[] args) {
     try (Scanner scan = new Scanner(System.in)) {
       try {

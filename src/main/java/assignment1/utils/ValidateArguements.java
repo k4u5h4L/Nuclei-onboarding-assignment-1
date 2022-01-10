@@ -7,9 +7,12 @@ import java.util.HashMap;
 
 public class ValidateArguements {
 
-  /*
-   * Function to validate if the command line arguements passed are in the correct form
-   * */
+  /**
+   * Function which validated the command line inputs.
+   *
+   * @param params String of values passed from the user
+   * @throws InvalidArguementsException
+   */
   public static void validateInputs(String[] params) throws InvalidArguementsException {
     // check if -name and -type are present by checking the number of arguements and names
     if (params.length < 4 || !Arrays.asList(params).contains("-name") || !Arrays.asList(params)
@@ -21,6 +24,12 @@ public class ValidateArguements {
     }
   }
 
+  /**
+   * Funcion which valdated the price and quality of the Item object from the hash map
+   *
+   * @param map A parsed hash map
+   * @throws InvalidArguementsException
+   */
   public static void validatePriceAndQuantity(HashMap<String, String> map)
       throws InvalidArguementsException {
     if (map.containsKey("-price")) {
