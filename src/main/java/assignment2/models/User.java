@@ -2,7 +2,7 @@ package assignment2.models;
 
 import assignment2.constants.Constants;
 import assignment2.exceptions.InputValidationException;
-import assignment2.utils.Validator;
+import assignment2.utils.ValidatorUtil;
 import java.io.Serializable;
 import java.util.HashSet;
 
@@ -10,24 +10,16 @@ public class User implements Comparable<User>, Serializable {
 
   protected String fullName, address;
   protected int rollNo, age;
-  protected Course[] courses;
+  protected char[] courses;
 
   static HashSet<Integer> rollNoTracker = new HashSet<Integer>();
 
-  public User(String name, int age, String address, int rollNo, String courses) {
-    try {
-      Validator.validateFullName(name);
-      Validator.validateAge(age);
-      Validator.validateAddress(address);
-      Validator.validateRollNo(rollNo, rollNoTracker);
-      this.courses = Validator.processCourses(courses);
-    } catch (InputValidationException e) {
-      e.printStackTrace();
-    }
+  public User(String name, int age, String address, int rollNo, char[] courses) {
     this.fullName = name;
     this.address = address;
     this.rollNo = rollNo;
     this.age = age;
+    this.courses = courses;
   }
 
   public String getFullName() {
@@ -62,11 +54,11 @@ public class User implements Comparable<User>, Serializable {
     this.age = age;
   }
 
-  public Course[] getCourses() {
+  public char[] getCourses() {
     return courses;
   }
 
-  public void setCourses(final Course[] courses) {
+  public void setCourses(final char[] courses) {
     this.courses = courses;
   }
 
@@ -96,7 +88,7 @@ public class User implements Comparable<User>, Serializable {
     String[] coursesToPrint = new String[courses.length];
 
     for (int i = 0; i < courses.length; i++) {
-      coursesToPrint[i] = String.valueOf(courses[i].getCourse());
+      coursesToPrint[i] = String.valueOf(courses[i]);
     }
 
     System.out.println(fullName + Constants.TAB_SEPARATOR + rollNo + Constants.TAB_SEPARATOR + age

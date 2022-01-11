@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DiskStorage {
+public class DiskStorageService {
 
   final static Logger logger = LoggerFactory.getLogger(Application.class);
 
@@ -22,15 +22,9 @@ public class DiskStorage {
    *
    * @param users ArrayList of User objects
    */
-  public static void saveToDisk(ArrayList<User> users) {
+  public static void saveToDisk(ArrayList<User> users, ObjectOutputStream oos) {
     try {
-      FileOutputStream fos = new FileOutputStream("userdetails.ser");
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
-
       oos.writeObject(users);
-
-      oos.close();
-      fos.close();
 
       System.out.println("Successfully saved to disk.");
     } catch (FileNotFoundException e) {
@@ -45,21 +39,10 @@ public class DiskStorage {
    *
    * @return ArrayList of User objects
    */
-  public static ArrayList<User> getFromDisk() {
+  public static ArrayList<User> getFromDisk(ObjectInputStream ois) {
     ArrayList<User> users;
     try {
-      FileInputStream fis = new FileInputStream("userdetails.ser");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-
-      //noinspection unchecked
       users = (ArrayList<User>) ois.readObject();
-
-      ois.close();
-      fis.close();
-
-      for (User u : users) {
-        System.out.println(u);
-      }
 
       return users;
     } catch (FileNotFoundException e) {

@@ -1,15 +1,10 @@
 package assignment2;
 
 import assignment2.exceptions.InputValidationException;
-import assignment2.exceptions.OrderMismatchException;
-import assignment2.models.Course;
 import assignment2.models.User;
-import assignment2.services.AddDetails;
-import assignment2.utils.SortUsers;
-import assignment2.utils.Validator;
+import assignment2.services.UserService;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -22,10 +17,14 @@ public class AdderTest {
   public void verifyUsersAreBeingAdded() {
     ArrayList<User> users = new ArrayList<User>();
 
-    User user = new User("kau", 21, "bengaluru", 1, "a b c d");
+    try {
+      User user = new User("kau", 21, "bengaluru", 1, UserService.processCourses("a b c d"));
 
-    users.add(user);
+      users.add(user);
 
-    Assertions.assertEquals(AddDetails.addUserDetails(new ArrayList<User>(), user), users);
+      Assertions.assertEquals(UserService.addUserDetails(new ArrayList<User>(), user), users);
+    } catch (InputValidationException e) {
+      Assertions.fail("Input not valid", e);
+    }
   }
 }

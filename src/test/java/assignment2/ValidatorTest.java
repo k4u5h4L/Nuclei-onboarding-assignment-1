@@ -1,8 +1,8 @@
 package assignment2;
 
 import assignment2.exceptions.InputValidationException;
-import assignment2.models.Course;
-import assignment2.utils.Validator;
+import assignment2.services.UserService;
+import assignment2.utils.ValidatorUtil;
 
 import java.util.HashSet;
 
@@ -13,10 +13,10 @@ import org.junit.jupiter.api.DisplayName;
 public class ValidatorTest {
 
   @Test
-  @DisplayName("Name is not null")
-  public void verifyValidityOfName() {
+  @DisplayName("Name or address is not null")
+  public void verifyValidityOfNameAndAddress() {
     Assertions.assertThrows(InputValidationException.class, () -> {
-      Validator.validateFullName("");
+      ValidatorUtil.validateString("");
     });
   }
 
@@ -24,19 +24,11 @@ public class ValidatorTest {
   @DisplayName("Age is not less than 0 or greater than 150")
   public void verifyValidityOfAge() {
     Assertions.assertThrows(InputValidationException.class, () -> {
-      Validator.validateAge(0);
+      ValidatorUtil.validateAge(0);
     });
 
     Assertions.assertThrows(InputValidationException.class, () -> {
-      Validator.validateAge(151);
-    });
-  }
-
-  @Test
-  @DisplayName("Address is not null")
-  public void verifyValidityOfAddress() {
-    Assertions.assertThrows(InputValidationException.class, () -> {
-      Validator.validateAddress("");
+      ValidatorUtil.validateAge(151);
     });
   }
 
@@ -49,29 +41,27 @@ public class ValidatorTest {
     hs.add(2);
 
     Assertions.assertThrows(InputValidationException.class, () -> {
-      Validator.validateRollNo(1, hs);
+      ValidatorUtil.validateRollNo(1, hs);
     });
   }
 
   @Test
   @DisplayName("Courses are returned right without exceptions")
   public void verifyValueOfCourses() {
-    Course[] courses =
-        new Course[]{new Course('A'), new Course('B'), new Course('C'), new Course('D')};
+    char[] courses = new char[]{'A', 'B', 'C', 'D'};
 
     Assertions.assertThrows(InputValidationException.class, () -> {
-      Validator.processCourses("a b c");
+      UserService.processCourses("a b c");
 
-      Assertions.assertEquals(Validator.processCourses("a b c d"), courses);
+      Assertions.assertEquals(UserService.processCourses("a b c d"), courses);
     });
   }
 
   @Test
   @DisplayName("Courses valid (4 courses out of A, B, C, D)")
   public void verifyValidityOfCourses() {
-    Course[] courses =
-        new Course[]{new Course('A'), new Course('B'), new Course('C'), new Course('D')};
+    char[] courses = new char[]{'A', 'B', 'C', 'D'};
 
-    Assertions.assertFalse(Validator.validateCourses(courses));
+    Assertions.assertFalse(ValidatorUtil.validateCourses(courses));
   }
 }

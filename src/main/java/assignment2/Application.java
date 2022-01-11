@@ -2,12 +2,15 @@ package assignment2;
 
 import assignment2.exceptions.UserNotFoundException;
 import assignment2.models.User;
-import assignment2.services.AddDetails;
-import assignment2.services.DeleteDetails;
-import assignment2.services.DiskStorage;
-import assignment2.services.DisplayDetails;
-import assignment2.services.TerminateProgram;
-import assignment2.utils.InteractiveScanning;
+import assignment2.services.DiskStorageService;
+import assignment2.services.UserService;
+import assignment2.utils.InteractiveScanningUtil;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -19,6 +22,12 @@ public class Application {
 
   final static Logger logger = LoggerFactory.getLogger(Application.class);
 
+  static FileOutputStream fos;
+  static ObjectOutputStream oos;
+  static FileInputStream fis;
+  static ObjectInputStream ois;
+
+
   /**
    * Main application starting point
    *
@@ -27,7 +36,19 @@ public class Application {
   public static void init(String[] args) {
     ArrayList<User> users;
 
-    users = DiskStorage.getFromDisk();
+    try {
+      fos = new FileOutputStream("userdetails.ser");
+      oos = new ObjectOutputStream(fos);
+
+      fis = new FileInputStream("userdetails.ser");
+      ois = new ObjectInputStream(fis);
+    } catch (FileNotFoundException e) {
+      logger.error("File specified is not found.", e);
+    } catch (IOException e) {
+      logger.error("Error in reading or writing to file.", e);
+    }
+
+    users = DiskStorageService.getFromDisk(ois);
 
     try (Scanner scan = new Scanner(System.in)) {
       boolean stopSignal = true;
@@ -41,22 +62,22 @@ public class Application {
         switch (choice) {
           case 1: {
             // fuction which scans and adds user details to memory
-            AddDetails.handleAddUser(users, scan);
+            UserService.addUserDetails(users, InteractiveScanningUtil.scanMenu(scan));
             break;
           }
 
           case 2: {
             // function which displays all user details in memory
-            DisplayDetails.display(users, scan);
+            UserService.displayUsers(users, scan);
             break;
           }
 
           case 3: {
             // function which deletes based on a given roll number
-            int rollNumberKey = InteractiveScanning.rollNumberToDeleteScanner(scan);
+            int rollNumberKey = InteractiveScanningUtil.scanRollNumberToDelete(scan);
 
             try {
-              DeleteDetails.delete(users, rollNumberKey);
+              UserService.deleteDetails(users, rollNumberKey);
             } catch (UserNotFoundException e) {
               System.out.println("The specified user is not found.");
             }
@@ -65,14 +86,14 @@ public class Application {
 
           case 4: {
             // save user details to disk
-            DiskStorage.saveToDisk(users);
+            DiskStorageService.saveToDisk(users, oos);
             break;
           }
 
           case 5: {
             // Exit the program asking if they want to save before doing so
             stopSignal = false;
-            TerminateProgram.terminate(users, scan);
+            InteractiveScanningUtil.scanCloseConfirmationAlert(scan, users, oos);
             break;
           }
 
@@ -84,6 +105,15 @@ public class Application {
       }
     } catch (InputMismatchException e) {
       logger.error("Input is not matching its type.", e);
+    }
+
+    try {
+      fis.close();
+      fos.close();
+      oos.close();
+      ois.close();
+    } catch (IOException e) {
+      logger.error("Error in closing file services.", e);
     }
   }
 }
