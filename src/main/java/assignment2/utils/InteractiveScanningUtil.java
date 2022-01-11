@@ -1,7 +1,7 @@
 package assignment2.utils;
 
 import assignment2.exceptions.InputValidationException;
-import assignment2.models.User;
+import assignment2.models.UserModel;
 import assignment2.services.DiskStorageService;
 import assignment2.services.UserService;
 import java.io.ObjectOutputStream;
@@ -21,7 +21,7 @@ public class InteractiveScanningUtil {
    * @param scan Scanner object to scan from cmd line
    * @return The populated User object
    */
-  public static User scanMenu(Scanner scan) {
+  public static UserModel scanMenu(Scanner scan) {
     System.out.print("Enter full name: ");
     String userFullName = scan.nextLine();
     System.out.print("Enter age: ");
@@ -41,13 +41,13 @@ public class InteractiveScanningUtil {
       ValidatorUtil.validateString(userFullName);
       ValidatorUtil.validateAge(userAge);
       ValidatorUtil.validateString(userAddress);
-      ValidatorUtil.validateRollNo(userRollNo, User.getRollNoTracker());
+      ValidatorUtil.validateRollNo(userRollNo, UserModel.getRollNoTracker());
       courses = UserService.processCourses(userCourses);
     } catch (InputValidationException e) {
       logger.error(e.getMessage(), e);
     }
 
-    return new User(userFullName, userAge, userAddress, userRollNo, courses);
+    return new UserModel(userFullName, userAge, userAddress, userRollNo, courses);
   }
 
   /**
@@ -90,7 +90,7 @@ public class InteractiveScanningUtil {
    * @param scan  Scanner object to scan from cmd line
    * @param users ArrayList of User objects to be saved to disk
    */
-  public static void scanCloseConfirmationAlert(Scanner scan, ArrayList<User> users,
+  public static void scanCloseConfirmationAlert(Scanner scan, ArrayList<UserModel> users,
                                                 ObjectOutputStream oos) {
     System.out.print("Do you want to save before exiting? (y/n): ");
     char choice = scan.nextLine().charAt(0);

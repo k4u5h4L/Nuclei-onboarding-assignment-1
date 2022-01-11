@@ -4,7 +4,7 @@ import assignment2.constants.Constants;
 import assignment2.exceptions.InputValidationException;
 import assignment2.exceptions.OrderMismatchException;
 import assignment2.exceptions.UserNotFoundException;
-import assignment2.models.User;
+import assignment2.models.UserModel;
 import assignment2.utils.InteractiveScanningUtil;
 import assignment2.utils.ValidatorUtil;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class UserService {
    * @param user  User object
    * @return updated users ArrayList
    */
-  public static ArrayList<User> addUserDetails(ArrayList<User> users, User user) {
+  public static ArrayList<UserModel> addUserDetails(ArrayList<UserModel> users, UserModel user) {
     users.add(user);
 
     return users;
@@ -40,7 +40,7 @@ public class UserService {
    * @return The deleted user
    * @throws UserNotFoundException
    */
-  public static void deleteDetails(ArrayList<User> users, int rollNumberKey)
+  public static void deleteDetails(ArrayList<UserModel> users, int rollNumberKey)
       throws UserNotFoundException {
 
     boolean isRemoved = users.removeIf(user -> (user.getRollNo() == rollNumberKey));
@@ -74,7 +74,7 @@ public class UserService {
    * @param users ArrayList of User objects
    * @param scan  Scanner object to scan from cmd line
    */
-  public static void displayUsers(ArrayList<User> users, Scanner scan) {
+  public static void displayUsers(ArrayList<UserModel> users, Scanner scan) {
     int field = InteractiveScanningUtil.scanField(scan);
     int order = InteractiveScanningUtil.scanOrder(scan);
 
@@ -88,7 +88,7 @@ public class UserService {
       logger.error("Field given was out of bounds.", e);
     }
 
-    for (User user : users) {
+    for (UserModel user : users) {
       user.display();
     }
 
@@ -105,7 +105,7 @@ public class UserService {
    * @throws OrderMismatchException
    * @throws InputValidationException
    */
-  public static void sortUsers(ArrayList<User> users, int field, int order)
+  public static void sortUsers(ArrayList<UserModel> users, int field, int order)
       throws OrderMismatchException, InputValidationException {
     if (order < 1 || order > 2) {
       throw new OrderMismatchException("Sorting order input invalid.");

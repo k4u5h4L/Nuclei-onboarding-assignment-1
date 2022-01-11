@@ -1,12 +1,10 @@
 package assignment2.models;
 
 import assignment2.constants.Constants;
-import assignment2.exceptions.InputValidationException;
-import assignment2.utils.ValidatorUtil;
 import java.io.Serializable;
 import java.util.HashSet;
 
-public class User implements Comparable<User>, Serializable {
+public class UserModel implements Comparable<UserModel>, Serializable {
 
   protected String fullName, address;
   protected int rollNo, age;
@@ -14,7 +12,7 @@ public class User implements Comparable<User>, Serializable {
 
   static HashSet<Integer> rollNoTracker = new HashSet<Integer>();
 
-  public User(String name, int age, String address, int rollNo, char[] courses) {
+  public UserModel(String name, int age, String address, int rollNo, char[] courses) {
     this.fullName = name;
     this.address = address;
     this.rollNo = rollNo;
@@ -67,7 +65,7 @@ public class User implements Comparable<User>, Serializable {
   }
 
   public static void setRollNoTracker(final HashSet<Integer> rollNoTracker) {
-    User.rollNoTracker = rollNoTracker;
+    UserModel.rollNoTracker = rollNoTracker;
   }
 
   @Override
@@ -77,7 +75,7 @@ public class User implements Comparable<User>, Serializable {
   }
 
   @Override
-  public int compareTo(User u) {
+  public int compareTo(UserModel u) {
     if (fullName.toLowerCase().charAt(0) == u.fullName.toLowerCase().charAt(0))
       return rollNo - u.rollNo;
     return fullName.toLowerCase().charAt(0) - u.fullName.toLowerCase().charAt(0);

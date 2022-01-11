@@ -5,30 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="356e75d9-cc75-4748-ac71-3a0416bf5c55" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/models/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/AddDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/DeleteDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/DiskStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/services/DiskStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/DisplayDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/TerminateProgram.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/utils/InteractiveScanning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/utils/InteractiveScanningUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/utils/SortUsers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/utils/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/utils/ValidatorUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/DiskStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/services/DiskStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/utils/InteractiveScanningUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/utils/InteractiveScanningUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment2/AdderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment2/AdderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment2/DeleterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment2/DeleterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment2/SorterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment2/SorterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment2/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment2/ValidatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

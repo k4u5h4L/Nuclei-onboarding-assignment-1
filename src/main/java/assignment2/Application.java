@@ -1,7 +1,7 @@
 package assignment2;
 
 import assignment2.exceptions.UserNotFoundException;
-import assignment2.models.User;
+import assignment2.models.UserModel;
 import assignment2.services.DiskStorageService;
 import assignment2.services.UserService;
 import assignment2.utils.InteractiveScanningUtil;
@@ -34,7 +34,7 @@ public class Application {
    * @param args array of command line arguements
    */
   public static void init(String[] args) {
-    ArrayList<User> users;
+    ArrayList<UserModel> users;
 
     try {
       fos = new FileOutputStream("userdetails.ser");

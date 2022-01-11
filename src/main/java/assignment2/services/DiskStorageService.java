@@ -1,10 +1,8 @@
 package assignment2.services;
 
 import assignment2.Application;
-import assignment2.models.User;
-import java.io.FileInputStream;
+import assignment2.models.UserModel;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -22,7 +20,7 @@ public class DiskStorageService {
    *
    * @param users ArrayList of User objects
    */
-  public static void saveToDisk(ArrayList<User> users, ObjectOutputStream oos) {
+  public static void saveToDisk(ArrayList<UserModel> users, ObjectOutputStream oos) {
     try {
       oos.writeObject(users);
 
@@ -39,21 +37,21 @@ public class DiskStorageService {
    *
    * @return ArrayList of User objects
    */
-  public static ArrayList<User> getFromDisk(ObjectInputStream ois) {
-    ArrayList<User> users;
+  public static ArrayList<UserModel> getFromDisk(ObjectInputStream ois) {
+    ArrayList<UserModel> users;
     try {
-      users = (ArrayList<User>) ois.readObject();
+      users = (ArrayList<UserModel>) ois.readObject();
 
       return users;
     } catch (FileNotFoundException e) {
       logger.error("File specified is not found.");
-      users = new ArrayList<User>();
+      users = new ArrayList<UserModel>();
     } catch (IOException e) {
       logger.error("Error in reading or writing to file.");
-      users = new ArrayList<User>();
+      users = new ArrayList<UserModel>();
     } catch (ClassNotFoundException e) {
       logger.error("Class not found in file.");
-      users = new ArrayList<User>();
+      users = new ArrayList<UserModel>();
     }
 
     return users;
