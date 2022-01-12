@@ -22,11 +22,6 @@ public class Application {
 
   final static Logger logger = LoggerFactory.getLogger(Application.class);
 
-  static FileOutputStream fos;
-  static ObjectOutputStream oos;
-  static FileInputStream fis;
-  static ObjectInputStream ois;
-
 
   /**
    * Main application starting point
@@ -36,21 +31,18 @@ public class Application {
   public static void init(String[] args) {
     ArrayList<UserModel> users;
 
-    try {
-      fos = new FileOutputStream("userdetails.ser");
-      oos = new ObjectOutputStream(fos);
+    UserService userService = new UserService();
+    DiskStorageService diskStorageService = new DiskStorageService();
 
-      fis = new FileInputStream("userdetails.ser");
-      ois = new ObjectInputStream(fis);
-    } catch (FileNotFoundException e) {
-      logger.error("File specified is not found.", e);
-    } catch (IOException e) {
-      logger.error("Error in reading or writing to file.", e);
-    }
+    try (Scanner scan = new Scanner(System.in);
+         FileOutputStream fos = new FileOutputStream("userdetails.ser");
+         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-    users = DiskStorageService.getFromDisk(ois);
+         FileInputStream fis = new FileInputStream("userdetails.ser");
+         ObjectInputStream ois = new ObjectInputStream(fis)) {
 
-    try (Scanner scan = new Scanner(System.in)) {
+      users = diskStorageService.getFromDisk(ois);
+
       boolean stopSignal = true;
       while (stopSignal) {
         System.out.println("1. Add User details.\n" + "2. Display User details.\n" + "3. Delete "
@@ -62,13 +54,13 @@ public class Application {
         switch (choice) {
           case 1: {
             // fuction which scans and adds user details to memory
-            UserService.addUserDetails(users, InteractiveScanningUtil.scanMenu(scan));
+            userService.addUserDetails(users, InteractiveScanningUtil.scanMenu(scan));
             break;
           }
 
           case 2: {
             // function which displays all user details in memory
-            UserService.displayUsers(users, scan);
+            userService.displayUsers(users, scan);
             break;
           }
 
@@ -77,7 +69,7 @@ public class Application {
             int rollNumberKey = InteractiveScanningUtil.scanRollNumberToDelete(scan);
 
             try {
-              UserService.deleteDetails(users, rollNumberKey);
+              userService.deleteDetails(users, rollNumberKey);
             } catch (UserNotFoundException e) {
               System.out.println("The specified user is not found.");
             }
@@ -86,7 +78,7 @@ public class Application {
 
           case 4: {
             // save user details to disk
-            DiskStorageService.saveToDisk(users, oos);
+            diskStorageService.saveToDisk(users, oos);
             break;
           }
 
@@ -105,15 +97,10 @@ public class Application {
       }
     } catch (InputMismatchException e) {
       logger.error("Input is not matching its type.", e);
-    }
-
-    try {
-      fis.close();
-      fos.close();
-      oos.close();
-      ois.close();
+    } catch (FileNotFoundException e) {
+      logger.error("File specified is not found.", e);
     } catch (IOException e) {
-      logger.error("Error in closing file services.", e);
+      logger.error("Error in reading or writing to file.", e);
     }
   }
 }

@@ -7,10 +7,18 @@ import assignment2.services.UserService;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 public class AdderTest {
+
+  UserService userService;
+
+  @BeforeEach
+  public void runBeforeEach() {
+    userService = new UserService();
+  }
 
   @Test
   @DisplayName("User is being added")
@@ -19,11 +27,11 @@ public class AdderTest {
 
     try {
       UserModel user =
-          new UserModel("kau", 21, "bengaluru", 1, UserService.processCourses("a b c d"));
+          new UserModel("kau", 21, "bengaluru", 1, userService.processCourses("a b c d"));
 
       users.add(user);
 
-      Assertions.assertEquals(UserService.addUserDetails(new ArrayList<UserModel>(), user), users);
+      Assertions.assertEquals(userService.addUserDetails(new ArrayList<UserModel>(), user), users);
     } catch (InputValidationException e) {
       Assertions.fail("Input not valid", e);
     }

@@ -26,7 +26,7 @@ public class UserService {
    * @param user  User object
    * @return updated users ArrayList
    */
-  public static ArrayList<UserModel> addUserDetails(ArrayList<UserModel> users, UserModel user) {
+  public ArrayList<UserModel> addUserDetails(ArrayList<UserModel> users, UserModel user) {
     users.add(user);
 
     return users;
@@ -40,7 +40,7 @@ public class UserService {
    * @return The deleted user
    * @throws UserNotFoundException
    */
-  public static void deleteDetails(ArrayList<UserModel> users, int rollNumberKey)
+  public void deleteDetails(ArrayList<UserModel> users, int rollNumberKey)
       throws UserNotFoundException {
 
     boolean isRemoved = users.removeIf(user -> (user.getRollNo() == rollNumberKey));
@@ -53,14 +53,14 @@ public class UserService {
   /**
    * Simply prints a line divider
    */
-  private static void printLine() {
+  private void printLine() {
     System.out.println("-----------------------------------------------------------------------");
   }
 
   /**
    * Simply prints all the attributes of the user
    */
-  private static void printHeaders() {
+  private void printHeaders() {
     printLine();
     System.out.println(
         "Name" + Constants.TAB_SEPARATOR + "Roll number" + Constants.TAB_SEPARATOR + "Age"
@@ -74,14 +74,14 @@ public class UserService {
    * @param users ArrayList of User objects
    * @param scan  Scanner object to scan from cmd line
    */
-  public static void displayUsers(ArrayList<UserModel> users, Scanner scan) {
+  public void displayUsers(ArrayList<UserModel> users, Scanner scan) {
     int field = InteractiveScanningUtil.scanField(scan);
     int order = InteractiveScanningUtil.scanOrder(scan);
 
     printHeaders();
 
     try {
-      UserService.sortUsers(users, field, order);
+      sortUsers(users, field, order);
     } catch (OrderMismatchException e) {
       logger.error("Order given was invalid (not 1 or 2).", e);
     } catch (InputValidationException e) {
@@ -105,7 +105,7 @@ public class UserService {
    * @throws OrderMismatchException
    * @throws InputValidationException
    */
-  public static void sortUsers(ArrayList<UserModel> users, int field, int order)
+  public void sortUsers(ArrayList<UserModel> users, int field, int order)
       throws OrderMismatchException, InputValidationException {
     if (order < 1 || order > 2) {
       throw new OrderMismatchException("Sorting order input invalid.");
@@ -147,7 +147,7 @@ public class UserService {
    * @return Array of (parsed) courses
    * @throws InputValidationException
    */
-  public static char[] processCourses(String coursesString) throws InputValidationException {
+  public char[] processCourses(String coursesString) throws InputValidationException {
     String[] courses = coursesString.split(Constants.REGEX_TO_SPLIT_COURSES);
 
     if (courses.length != 4) {

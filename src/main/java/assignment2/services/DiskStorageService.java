@@ -20,7 +20,7 @@ public class DiskStorageService {
    *
    * @param users ArrayList of User objects
    */
-  public static void saveToDisk(ArrayList<UserModel> users, ObjectOutputStream oos) {
+  public void saveToDisk(ArrayList<UserModel> users, ObjectOutputStream oos) {
     try {
       oos.writeObject(users);
 
@@ -37,7 +37,7 @@ public class DiskStorageService {
    *
    * @return ArrayList of User objects
    */
-  public static ArrayList<UserModel> getFromDisk(ObjectInputStream ois) {
+  public ArrayList<UserModel> getFromDisk(ObjectInputStream ois) {
     ArrayList<UserModel> users;
     try {
       users = (ArrayList<UserModel>) ois.readObject();

@@ -37,12 +37,14 @@ public class InteractiveScanningUtil {
 
     char[] courses = {};
 
+    UserService userService = new UserService();
+
     try {
       ValidatorUtil.validateString(userFullName);
       ValidatorUtil.validateAge(userAge);
       ValidatorUtil.validateString(userAddress);
       ValidatorUtil.validateRollNo(userRollNo, UserModel.getRollNoTracker());
-      courses = UserService.processCourses(userCourses);
+      courses = userService.processCourses(userCourses);
     } catch (InputValidationException e) {
       logger.error(e.getMessage(), e);
     }
@@ -95,8 +97,10 @@ public class InteractiveScanningUtil {
     System.out.print("Do you want to save before exiting? (y/n): ");
     char choice = scan.nextLine().charAt(0);
 
+    DiskStorageService diskStorageService = new DiskStorageService();
+
     if (choice == 'y' || choice == 'Y') {
-      DiskStorageService.saveToDisk(users, oos);
+      diskStorageService.saveToDisk(users, oos);
     }
   }
 }
