@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="356e75d9-cc75-4748-ac71-3a0416bf5c55" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/ImportedItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Imported.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/ManufacturedItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Manufactured.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/RawItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/Raw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/models/enums/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/models/enums/ItemType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/CommandLineArguementsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/services/InteractiveScanning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/utils/AddToArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/AddToArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment1/utils/ValidateType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/Assignment1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment1/ItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/assignment2/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment2/services/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +67,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -83,7 +75,7 @@
       <command value="gradle assemble" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'assignment1'">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -102,6 +94,19 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assignment2.Main" />
+      <module name="Assignment1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true" show_console_on_std_err="true">
       <option name="MAIN_CLASS_NAME" value="assignment1.Main" />
@@ -161,29 +166,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Assignment1Test.verifyNoExceptionThrown" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;Assignment1Test.verifyNoExceptionThrown&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="Assignment1Test.verifySalestaxCalculation (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -230,20 +212,45 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Tests in 'assignment2'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;assignment2.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
       <item itemvalue="Gradle.Assignment1 [assemble]" />
-      <item itemvalue="Gradle.Assignment1Test.verifyNoExceptionThrown" />
       <item itemvalue="Gradle.Assignment1Test.verifySalestaxCalculation (1)" />
       <item itemvalue="Gradle.Assignment1Test (1)" />
       <item itemvalue="Gradle.Tests in 'assignment1'" />
+      <item itemvalue="Gradle.Tests in 'assignment2'" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Gradle.Tests in 'assignment2'" />
         <item itemvalue="Gradle.Tests in 'assignment1'" />
         <item itemvalue="Gradle.Assignment1Test (1)" />
         <item itemvalue="Gradle.Assignment1Test.verifySalestaxCalculation (1)" />
-        <item itemvalue="Gradle.Assignment1Test.verifyNoExceptionThrown" />
       </list>
     </recent_temporary>
   </component>
