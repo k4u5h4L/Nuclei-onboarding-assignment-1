@@ -7,6 +7,7 @@ import assignment3.exceptions.NodeNotFoundException;
 import assignment3.models.GraphModel;
 import assignment3.models.NodeModel;
 import assignment3.services.GraphService;
+import assignment3.utils.GraphUtils;
 
 import java.util.HashSet;
 
@@ -103,7 +104,7 @@ public class GraphServicesTest {
       nodes.add(1);
       nodes.add(2);
 
-      Assertions.assertEquals(graphService.getAncestors(3, graph), nodes);
+      Assertions.assertEquals(GraphUtils.getAncestors(3, graph), nodes);
     } catch (CyclicDependencyException | NodeNotFoundException e) {
       Assertions.fail("Cycle found or node not found");
     }
@@ -120,7 +121,7 @@ public class GraphServicesTest {
       nodes.add(2);
       nodes.add(3);
 
-      Assertions.assertEquals(graphService.getDescendents(1, graph), nodes);
+      Assertions.assertEquals(GraphUtils.getDescendents(1, graph), nodes);
     } catch (CyclicDependencyException | NodeNotFoundException e) {
       Assertions.fail("Cycle found or node not found");
     }
