@@ -4,8 +4,9 @@ import assignment4.Main;
 import assignment4.constants.Constants;
 import assignment4.models.ItemModel;
 import assignment4.repositories.ItemRepository;
-import assignment4.services.ListPrinterService;
-import assignment4.utils.WaitForThreadUtil;
+import assignment4.utils.ConsumerUtil;
+import assignment4.utils.ThreadUtil;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 
 import org.slf4j.Logger;
@@ -15,36 +16,38 @@ public class ConsumerThread extends Thread {
 
   private static final Logger log = LoggerFactory.getLogger(Main.class);
 
-  final ProducerThread prod;
   ItemRepository repo;
-  ListPrinterService listPrinterService;
+  final ArrayDeque<ItemModel> producerBuffer;
 
   ArrayList<ItemModel> consumerItems;
 
-  public ConsumerThread(ProducerThread prod, ItemRepository repo) {
-    this.prod = prod;
+  public ConsumerThread(ItemRepository repo, ArrayDeque<ItemModel> producerBuffer) {
     this.repo = repo;
+    this.producerBuffer = producerBuffer;
     consumerItems = new ArrayList<>();
-    listPrinterService = new ListPrinterService();
   }
 
   public void run() {
     for (int i = 0; i < ProducerThread.getNumberOfRows(); i++) {
       ItemModel item;
-      synchronized (prod) {
-        while (ProducerThread.getProducerItems().size() == 0) {
-          WaitForThreadUtil.wait(prod);
+      synchronized (producerBuffer) {
+        while (producerBuffer.isEmpty() || ConsumerUtil.isItemPresent(consumerItems,
+            producerBuffer.getFirst().getName())) {
+          System.out.println(Thread.currentThread().getName() + " is waiting...");
+          ThreadUtil.wait(producerBuffer);
         }
 
-        item = ProducerThread.getProducerItems().remove(0);
+        item = producerBuffer.remove();
 
-        System.out.println(Constants.CONSUMER_CONSUMES_MESSAGE + item.getName());
-        prod.notify();
+        System.out.println(Constants.CONSUMER_CONSUMES_MESSAGE + item.getName() + ",\tThread: "
+            + Thread.currentThread().getName());
+        producerBuffer.notify();
       }
-
       consumerItems.add(item);
     }
+  }
 
-    listPrinterService.display(consumerItems);
+  public ArrayList<ItemModel> getConsumerItems() {
+    return consumerItems;
   }
 }

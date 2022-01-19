@@ -1,8 +1,13 @@
 package assignment4;
 
+import assignment4.constants.Constants;
+import assignment4.models.ItemModel;
 import assignment4.repositories.ItemRepository;
+import assignment4.services.ListPrinterService;
 import assignment4.threads.ConsumerThread;
 import assignment4.threads.ProducerThread;
+
+import java.util.ArrayDeque;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,11 +32,45 @@ public class Main {
   @Bean
   public CommandLineRunner runner(ItemRepository repository) {
     return (args) -> {
-      ProducerThread p = new ProducerThread(repository);
-      ConsumerThread c = new ConsumerThread(p, repository);
+      ArrayDeque<ItemModel> producerBuffer = new ArrayDeque<>(Constants.BUFFER_SIZE);
 
-      p.start();
-      c.start();
+      ProducerThread producerThread1 = new ProducerThread(repository, producerBuffer);
+      ProducerThread producerThread2 = new ProducerThread(repository, producerBuffer);
+      ProducerThread producerThread3 = new ProducerThread(repository, producerBuffer);
+
+      ConsumerThread consumerThread1 = new ConsumerThread(repository, producerBuffer);
+      ConsumerThread consumerThread2 = new ConsumerThread(repository, producerBuffer);
+      ConsumerThread consumerThread3 = new ConsumerThread(repository, producerBuffer);
+
+      Thread[] threadPool =
+          {producerThread1, producerThread2, producerThread3, consumerThread1, consumerThread2,
+              consumerThread3};
+
+      int producerCount = 1;
+      int consumerCount = 1;
+
+      for (Thread thread : threadPool) {
+        if (thread.getClass() == ProducerThread.class) {
+          thread.setName("Producer " + producerCount++);
+        } else {
+          thread.setName("Consumer " + consumerCount++);
+        }
+
+        thread.start();
+      }
+
+      for (Thread thread : threadPool) {
+        thread.join();
+      }
+
+      ListPrinterService listPrinterService = new ListPrinterService();
+
+      for (Thread thread : threadPool) {
+        if (thread.getClass() == ConsumerThread.class) {
+          listPrinterService.display(((ConsumerThread) thread).getConsumerItems(),
+              thread.getName());
+        }
+      }
     };
   }
 

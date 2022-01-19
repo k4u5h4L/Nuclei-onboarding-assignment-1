@@ -31,9 +31,9 @@ public class Application {
 
     try (Scanner scan = new Scanner(System.in)) {
 
-      boolean stopsignal = false;
+      boolean stopSignal = false;
 
-      while (!stopsignal) {
+      while (!stopSignal) {
         System.out.println(
             "1. Get the immediate parents of a node\n" + "2. Get the immediate children of a node\n"
                 + "3. Get the ancestors of a node, passing the node id as input parameter.\n"
@@ -164,7 +164,7 @@ public class Application {
           }
 
           case 9: {
-            stopsignal = true;
+            stopSignal = true;
             break;
           }
 
