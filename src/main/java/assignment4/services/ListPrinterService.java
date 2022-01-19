@@ -17,7 +17,9 @@ public class ListPrinterService {
    *
    * @param items ArrayList of ItemModel objects
    */
-  public void display(ArrayList<ItemModel> items) {
+  public void display(ArrayList<ItemModel> items, String threadName) {
+    printLine();
+    System.out.println("Thread: " + threadName);
     printLine();
     for (ItemModel item : items) {
       System.out.println("Name: " + item.getName());
