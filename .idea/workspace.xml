@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="356e75d9-cc75-4748-ac71-3a0416bf5c55" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment3/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment3/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assignment3/services/GraphService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment3/services/GraphService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assignment3/GraphServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assignment3/GraphServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,11 +227,11 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Main (2)" />
       <item itemvalue="Gradle.Assignment1 [assemble]" />
       <item itemvalue="Gradle.Tests in 'assignment1'" />
       <item itemvalue="Gradle.Tests in 'assignment2'" />
       <item itemvalue="Gradle.Tests in 'assignment3'" />
-      <item itemvalue="Application.Main (2)" />
     </list>
     <recent_temporary>
       <list>
