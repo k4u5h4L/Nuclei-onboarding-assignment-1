@@ -4,7 +4,8 @@ import assignment4.Main;
 import assignment4.constants.Constants;
 import assignment4.models.ItemModel;
 import assignment4.repositories.ItemRepository;
-import java.util.ArrayList;
+import assignment4.utils.ThreadUtil;
+import java.util.ArrayDeque;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,34 +16,34 @@ public class ProducerThread extends Thread {
   protected static long numberOfRows;
   static int value;
 
-  static ArrayList<ItemModel> producerItems;
+  final ArrayDeque<ItemModel> producerBuffer;
   ItemRepository repo;
 
-  public ProducerThread(ItemRepository repo) {
-    producerItems = new ArrayList<>();
+  public ProducerThread(ItemRepository repo, ArrayDeque<ItemModel> producerBuffer) {
     this.repo = repo;
+    this.producerBuffer = producerBuffer;
     numberOfRows = repo.count();
     value = 0;
   }
 
   public void run() {
     for (ItemModel item : repo.findAll()) {
-      System.out.println(Constants.PRODUCER_PRODUCES_MESSAGE + item.getName());
+      synchronized (producerBuffer) {
+        while (producerBuffer.size() == Constants.BUFFER_SIZE) {
+          System.out.println(Thread.currentThread().getName() + " is waiting...");
+          ThreadUtil.wait(producerBuffer);
+        }
 
-      synchronized (this) {
-        producerItems.add(item);
-        this.notify();
+        System.out.println(Constants.PRODUCER_PRODUCES_MESSAGE + item.getName() + ",\tThread: "
+            + Thread.currentThread().getName());
+
+        producerBuffer.add(item);
+        producerBuffer.notify();
       }
     }
+
   }
 
-  public static ArrayList<ItemModel> getProducerItems() {
-    return producerItems;
-  }
-
-  public static void setProducerItems(final ArrayList<ItemModel> producerItems) {
-    ProducerThread.producerItems = producerItems;
-  }
 
   public static long getNumberOfRows() {
     return numberOfRows;
