@@ -19,9 +19,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment4/threads/ProducerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment4/threads/ProducerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment4/utils/WaitForThreadUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment4/utils/ThreadUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/assignment4/Assignment4ApplicationTests.java" beforeDir="false" />
+<<<<<<< HEAD
 =======
       <change beforePath="$PROJECT_DIR$/src/main/java/assignment3/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/assignment3/Application.java" afterDir="false" />
 >>>>>>> 00351fe724541c01c3dd9e4c76a42eb88c0db038
+=======
+>>>>>>> d2d04fb2a8007ed25dd6074ffdc7a29add29921b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,10 +235,14 @@
     </configuration>
     <list>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d2d04fb2a8007ed25dd6074ffdc7a29add29921b
       <item itemvalue="Application.Main 1" />
       <item itemvalue="Application.Main 2" />
       <item itemvalue="Application.Main 3" />
       <item itemvalue="Application.Main 4" />
+<<<<<<< HEAD
 =======
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
@@ -244,6 +251,10 @@
       <item itemvalue="Gradle.Assignment1 [assemble]" />
       <item itemvalue="Gradle.Tests in 'assignment3'" />
 <<<<<<< HEAD
+=======
+      <item itemvalue="Gradle.Assignment1 [assemble]" />
+      <item itemvalue="Gradle.Tests in 'assignment3'" />
+>>>>>>> d2d04fb2a8007ed25dd6074ffdc7a29add29921b
       <item itemvalue="Gradle.Tests in 'assignment1'" />
 =======
 >>>>>>> 00351fe724541c01c3dd9e4c76a42eb88c0db038
